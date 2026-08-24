@@ -22,6 +22,12 @@ public class AlertsTests extends TestBase {
         alerts = new HomePage(driver).getAlertsPage();
     }
 
+    @Test
+    public void verifyAlertsPage(){
+        alerts.isPageTitleCorrect("JavaScript Alerts");
+    }
+
+
     //1
 @Test
     public void jsAlert(){
@@ -90,7 +96,7 @@ public void jsConfirm(String option){
                 Arguments.of("Тесты 1:4", "Ok")
         );
     }
-// для кнопки cancel
+// для кнопки
     @ParameterizedTest
     @ValueSource(strings = {"Test test","","  "})
     public void jsPromptClickOnButtonCancel(String option){
@@ -99,4 +105,14 @@ public void jsConfirm(String option){
                 .verifyResult("null");
     }
 
+
+//
+    @Test
+    public void jsAlertTextTest() {
+        alerts
+                .getAlerts()
+                .verifyAlertText("I am a JS Alert")
+                .acceptAlert();
+    }
 }
+

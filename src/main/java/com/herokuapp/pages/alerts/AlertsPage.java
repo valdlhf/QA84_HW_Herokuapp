@@ -60,4 +60,10 @@ public class AlertsPage extends BasePage {
         return this;
     }
 
+    public AlertsPage verifyAlertText(String expectedText) {
+        String actualText = driver.switchTo().alert().getText();
+        Assertions.assertEquals(expectedText, actualText);
+        return this;
+    }
+
 }
