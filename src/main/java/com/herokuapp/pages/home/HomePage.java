@@ -36,10 +36,19 @@ public class HomePage extends BasePage {
         return new FramesPage(driver);
     }
 
+    // drop down
     @FindBy(css = "a[href='/dropdown']")
     WebElement dropdown;
     public DropDownPage getDropDownPage(){
         clickWithJS(dropdown);
         return new DropDownPage(driver);
     }
+//
+//    //drag and drop
+//    @FindBy(css = "a[href='/drag_and_drop']")
+//    WebElement draganddrop;
+//    public DropDownPage getDropDownPage(){
+//        clickWithJS(draganddrop);
+//        return new DropDownPage(driver);
+//    }
 }

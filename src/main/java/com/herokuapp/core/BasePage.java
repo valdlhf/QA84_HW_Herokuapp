@@ -1,5 +1,6 @@
 package com.herokuapp.core;
 
+import com.herokuapp.pages.draganddrop.DragAndDropPage;
 import com.herokuapp.pages.dropdown.DropDownPage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
@@ -80,5 +81,14 @@ public abstract class BasePage {
     public DropDownPage getDropDownPage() {
         click(dropdown);
         return new DropDownPage(driver);
+    }
+
+    //drag and drop
+    @FindBy(css = "a[href='/drag_and_drop']")
+    WebElement dragAndDrop;
+
+    public DragAndDropPage getDragAndDropPage() {
+        click(dragAndDrop);
+        return new DragAndDropPage(driver);
     }
 }
