@@ -2,6 +2,7 @@ package com.herokuapp.pages.home;
 
 import com.herokuapp.core.BasePage;
 import com.herokuapp.pages.alerts.AlertsPage;
+import com.herokuapp.pages.dropdown.DropDownPage;
 import com.herokuapp.pages.frames.FramesPage;
 import com.herokuapp.pages.windows.WindowsPage;
 import org.openqa.selenium.WebDriver;
@@ -33,5 +34,12 @@ public class HomePage extends BasePage {
     public FramesPage getFramesPage() {
         clickWithJS(frames);
         return new FramesPage(driver);
+    }
+
+    @FindBy(css = "a[href='/dropdown']")
+    WebElement dropdown;
+    public DropDownPage getDropDownPage(){
+        clickWithJS(dropdown);
+        return new DropDownPage(driver);
     }
 }

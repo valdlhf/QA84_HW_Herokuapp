@@ -20,7 +20,7 @@ public class IFrameTest extends TestBase {
         iFrame = framesPage.getIFramePage();
     }
 
-       @Test
+    @Test
     public void verifyIFramesPage(){
         iFrame.isPageTitleCorrect("iFrame");
     }

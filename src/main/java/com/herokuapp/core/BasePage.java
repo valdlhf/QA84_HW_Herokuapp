@@ -1,5 +1,6 @@
 package com.herokuapp.core;
 
+import com.herokuapp.pages.dropdown.DropDownPage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -67,5 +68,17 @@ public abstract class BasePage {
     WebElement h3;
     public void isPageTitleCorrect(String title) {
         Assertions.assertTrue(isContainsText(title, h3));
+    }
+
+
+
+
+    // drop down
+    @FindBy(css = "a[href='/dropdown']")
+    WebElement dropdown;
+
+    public DropDownPage getDropDownPage() {
+        click(dropdown);
+        return new DropDownPage(driver);
     }
 }

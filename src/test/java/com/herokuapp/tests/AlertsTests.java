@@ -19,6 +19,7 @@ public class AlertsTests extends TestBase {
 
     @BeforeEach
     public void precondition(){
+
         alerts = new HomePage(driver).getAlertsPage();
     }
 
