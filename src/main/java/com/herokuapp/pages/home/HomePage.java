@@ -2,6 +2,7 @@ package com.herokuapp.pages.home;
 
 import com.herokuapp.core.BasePage;
 import com.herokuapp.pages.alerts.AlertsPage;
+import com.herokuapp.pages.brokenimages.BrokenImagesPage;
 import com.herokuapp.pages.dropdown.DropDownPage;
 import com.herokuapp.pages.frames.FramesPage;
 import com.herokuapp.pages.windows.WindowsPage;
@@ -43,6 +44,17 @@ public class HomePage extends BasePage {
         clickWithJS(dropdown);
         return new DropDownPage(driver);
     }
+
+    //broken images
+    @FindBy(css = "a[href='/broken_images']")
+    WebElement brokenImages;
+    public BrokenImagesPage getBrokenImagesPage() {
+        clickWithJS(brokenImages);
+        return new BrokenImagesPage(driver);
+    }
+
+
+
 //
 //    //drag and drop
 //    @FindBy(css = "a[href='/drag_and_drop']")
